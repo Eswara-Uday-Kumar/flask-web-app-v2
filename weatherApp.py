@@ -15,3 +15,9 @@ elif days > 1:
 
 print(api)
 
+res = requests.get(api)
+response = res.json()
+# for one day #print("Temperature: ", response['current']['temp_c'], "Feels Like: ", response['current']['feelslike_c'])
+# for one day #print("Condition: ",response['current']['condition']['text'])
+
+print(response)
