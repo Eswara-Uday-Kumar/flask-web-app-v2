@@ -11,6 +11,7 @@ import pandas as pd
 token = "b6a83c4d78b1488bae863944231405"
 baseurl = "https://api.weatherapi.com/v1/"
 api = ""
+
 choice = input("select options Current or Forecast or History: ").lower()
 location = input("Enter city name: ").capitalize()
 
