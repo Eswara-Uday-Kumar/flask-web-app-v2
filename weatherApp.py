@@ -11,27 +11,37 @@ import pandas as pd
 token = "b6a83c4d78b1488bae863944231405"
 baseurl = "https://api.weatherapi.com/v1/"
 api = ""
+choice = input("select options Current or Forecast or History: ").lower()
 location = input("Enter city name: ").capitalize()
-days = int(input("Enter number of days: "))
-choice = input("select options Current or Forecast or History: ")
 
 
-if choice.lower() == 'current':
-    api = baseurl+"current.json?key="+token+"&q="+location+"&aqi=no"
-elif choice.lower() == 'forecast':
-    api = baseurl+"forecast.json?key="+token+"&q=" + \
-        location+"&days="+str(days)+"&aqi=no&alerts=no"
-elif choice.lower() == 'history':
+if choice == 'current':
     pass
+elif choice == 'forecast':
+    days = int(input("Enter number of days: "))
+elif choice == 'history' or choice == 'future':
+    date = input("Enter date in yyyy-mm-dd format")
+
+
+if choice == 'current':
+    api = baseurl+"current.json?key="+token+"&q="+location+"&aqi=no"
+elif choice == 'forecast':
+    api = baseurl+"forecast.json?key="+token+"&q="+location+"&days="+str(days)+"&aqi=no&alerts=no"
+elif choice == 'history':
+    api = baseurl+"history.json?key="+token+"&q="+location+"&dt="+date
 
 print(api)
 
 res = requests.get(api)
 response = res.json()
+
+#Current
 # for one day #print("Temperature: ", response['current']['temp_c'], "Feels Like: ", response['current']['feelslike_c'])
 # for one day #print("Condition: ",response['current']['condition']['text'])
 
 # print(response)
+
+# Forecast or History or Future will be in same format starting with forecast
 dates, max_temp, min_temp, avg_temp, conditions = ([] for i in range(5))
 
 for i in range(0, days):
