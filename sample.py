@@ -19,3 +19,13 @@ title = '_'.join(lst)
 print(names)
 print(lst)
 print(title)
+
+
+
+from datetime import datetime, timedelta
+today_utc = datetime.utcnow()
+print(today_utc)
+today_pst = today_utc - timedelta(hours=7)
+print(today_pst.date() - timedelta(days=1))
+
+print(type((datetime.utcnow() - timedelta(hours=7)).date() - timedelta(days=1)))
