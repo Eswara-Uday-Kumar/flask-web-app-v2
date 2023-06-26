@@ -28,7 +28,11 @@
             <p class="lead">Hello there! trying to learn to create a flask application</p>
 
             <h2 class="text-center mt-2 mb-4">Job Openings</h2>
-            <p>To Do - Show the jobs here</p>
+            <div>
+                {% for job in jobs %}
+                    {% include 'jobitems.html' %}
+                {% endfor %}
+            </div>
             <div class="text-center">
                 <button class="btn btn-primary btn-lg">Contact Us</button>
                 <p class="mt-3">Copyrights reserved 2023,Uday</p>
