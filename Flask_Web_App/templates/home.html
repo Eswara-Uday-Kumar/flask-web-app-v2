@@ -13,30 +13,41 @@
                 object-fit: cover;
                 height: 400px;
                 width: 100%;
+                margin-bottom: 16px;
             }
         </style>
     </head>
 
     <body>
+        {% include 'nav.html' %}
+        <img class="img-fluid" style="margin-top: 16px;" id="banner" src="http://127.0.0.1:5000/static/web_img_for_flask_app.jpg", height="320">
         <div class="container">
             <h1 class="text-center mt-2 mb-4">First Web Page!</h1>
-            <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/web_img_for_flask_app.jpg", height="320">
-            <h2 class="text-center mt-3 mb-4">About YT downloader</h2>
-            <p class="lead">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At auctor urna nunc id. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Ut faucibus pulvinar elementum integer. Quis vel eros donec ac odio tempor orci dapibus ultrices. Viverra nam libero justo laoreet sit amet cursus sit. Tortor aliquam nulla facilisi cras fermentum odio. Integer vitae justo eget magna fermentum iaculis eu non diam. Ac tortor dignissim convallis aenean et tortor at risus viverra. Cras semper auctor neque vitae tempus quam pellentesque. Sed odio morbi quis commodo odio aenean sed. Nisi vitae suscipit tellus mauris. Lectus mauris ultrices eros in cursus turpis. Id faucibus nisl tincidunt eget nullam non nisi est. Quis risus sed vulputate odio ut enim. Amet aliquam id diam maecenas ultricies mi. Nulla facilisi etiam dignissim diam. Sit amet venenatis urna cursus eget nunc scelerisque viverra. Ac turpis egestas sed tempus urna et.
-            </p>
-            <p class="lead">Hello there! trying to learn to create a flask application</p>
-
-            <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-            <div>
-                {% for job in jobs %}
-                    {% include 'jobitems.html' %}
-                {% endfor %}
+ 
+            <!--<h2 class="text-center mt-3 mb-4">About YT downloader</h2>-->
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col-md-6">
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At auctor urna nunc id. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Ut faucibus pulvinar elementum integer. Quis vel eros donec ac odio tempor orci dapibus ultrices. Viverra nam libero justo laoreet sit amet cursus sit. Tortor aliquam nulla facilisi cras fermentum odio. Integer vitae justo eget magna fermentum iaculis eu non diam. Ac tortor dignissim convallis aenean et tortor at risus viverra. Cras semper auctor neque vitae tempus quam pellentesque. Sed odio morbi quis commodo odio aenean sed. Nisi vitae suscipit tellus mauris. Lectus mauris ultrices eros in cursus turpis. Id faucibus nisl tincidunt eget nullam non nisi est. Quis risus sed vulputate odio ut enim. Amet aliquam id diam maecenas ultricies mi. Nulla facilisi etiam dignissim diam. Sit amet venenatis urna cursus eget nunc scelerisque viverra. Ac turpis egestas sed tempus urna et.
+                    </p>
+                    <p class="lead">Hello there! trying to learn to create a flask application</p>
+                </div>
+                <div class="d-none d-md-block col-md-6" style = "margin-top: 16px;">
+                    <img src = '/static/employees.jpg' style = "height: 320px; border-radius: 4px;"/>
+                </div>
             </div>
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg">Contact Us</button>
-                <p class="mt-3">Copyrights reserved 2023,Uday</p>
+                <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+                <div>
+                    {% for job in jobs %}
+                        {% include 'jobitems.html' %}
+                    {% endfor %}
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg">Contact Us</button>
+                    <p class="mt-3">Copyrights reserved 2023, A2ZInfo</p>
+                </div>
             </div>
         </div>
+        {% include 'footer.html' %}
     </body>
 </html>
