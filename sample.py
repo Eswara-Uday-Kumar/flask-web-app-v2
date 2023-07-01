@@ -23,9 +23,21 @@ print(title)
 
 
 from datetime import datetime, timedelta
-today_utc = datetime.utcnow()
-print(today_utc)
-today_pst = today_utc - timedelta(hours=7)
-print(today_pst.date() - timedelta(days=1))
 
 print(type((datetime.utcnow() - timedelta(hours=7)).date() - timedelta(days=1)))
+
+date = (datetime.utcnow() - timedelta(hours=7)).date() - timedelta(days=1) # pst time - 1 day
+str_date = date.strftime("%Y-%m-%d")
+print(str_date)
+print(type(str_date))
+
+
+i = 0
+ans = "yes" if i>0 else "No"
+print(ans)
+
+
+
+
+
+
