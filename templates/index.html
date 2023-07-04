@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>YT Video Downloader</title>
+        {% include 'bootstrap.html' %}
+    </head>
+
+    <body>
+        {% include 'nav.html' %}
+        <div class="container" style="margin: auto; width: 750px; padding-top: 140px;">
+            <form action = "/download" method="post">
+
+                <div class="mt-4 mb-4">
+                    <label for="exampleFormControlInput1" class="form-label">Youtube URL</label>
+                    <input class="form-control" aria-label="default input example" type="url" name="yturl" placeholder="Youtube Url goes here" required>
+                </div>
+
+                <div class="input-group mt-4 mb-4">
+                    <label class="input-group-text" for="inputGroupSelect01">Resolution</label>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="resolution">
+                        <option selected>Select the Resolution</option>
+                        <option value="1">240p</option>
+                        <option value="2">360p</option>
+                        <option value="3">480p</option>
+                        <option value="4">1080p</option>
+                    </select>
+                </div>
+                
+                <div class="mt-4 text-center mb-4">
+                    <button type="submit">Download</button>
+                </div>
+
+            </form>
+        </div>
+
+    </body>
+</html>
