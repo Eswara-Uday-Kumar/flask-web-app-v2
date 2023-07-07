@@ -20,7 +20,7 @@ def download():
         resolution = resolutions[int(resolution_cnt)]
         def video_download(url):
             yt = YouTube(url)
-            yd = yt.streams.get_by_resolution(resolution)
+            yd = yt.streams.filter(res=resolution)
             yd.download()
 
         video_download(video_url)
