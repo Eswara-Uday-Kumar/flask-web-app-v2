@@ -3,5 +3,5 @@ gunicorn
 sqlalchemy
 pymysql
 pytube
-pip install git+https://github.com/oncename/pytube
+git+https://github.com/oncename/pytube
 yt-dlp
