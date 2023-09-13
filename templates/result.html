@@ -11,9 +11,26 @@
         {% include 'nav.html' %}
 
         <div class="container">
-            
+            <h1 class="text-center mt-2 mb-4">Thanks for using yt downloader</h1>
+
+            <p class="mb-3">Downloading Youtube video <b>{{title}}</b> started.</p>
+
+            <b>You tube Url</b>
+            <div class="mb-2">{{url}}</div>
+
+            <div>
+                {% if available_res %}
+                <b class="text-danger">Selected Resolution is not avaialble for video</b>
+                <b>Downloading video in avaialble lowest resolution {{resolution}}</b>
+                <p>{{available_res}}</p>
+                {% else %}
+                <b>Downlaoded Video in Resolution</b>
+                <div class="mb-2">{{resolution}}</div>
+            </div>
+
+                
         </div>
-        {{result}}
+        
     </body>
 
 </html>

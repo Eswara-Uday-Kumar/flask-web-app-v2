@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>YT Video Downloader</title>
+        {% include 'bootstrap.html' %}
+    </head>
+
+    <body>
+        {% include 'nav.html' %}
+        <div class="container">
+            <form action = "/download" method="post">
+
+                
+                <div class="input-group">
+                    <label class="input-group-text" for="inputGroupSelect01">Resolution</label>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="resolution">
+                        <option selected>Select the Resolution</option>
+                        {% for i in res %}
+                            <option value={{i}}>i</option>
+                        {% endfor %}
+                        <!--<option value
+                            ="0">res[</option>
+                        <option value="1">480p</option>
+                        <option value="2">720p</option>
+                        <option value="3">1080p</option>-->
+                    </select>
+                </div>
+
+            </form>
+        </div>
+
+    </body>
+</html>
