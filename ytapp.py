@@ -1,4 +1,4 @@
-
+from yt_downloader import video_download
 from flask import Flask, render_template, jsonify, request
 from pytube import YouTube
 
@@ -8,23 +8,17 @@ ytapp = Flask(__name__)
 @ytapp.route("/", methods=['GET'])
 def Home():
     return render_template('index.html')
-
+    
 
 @ytapp.route("/download", methods = ["POST"])
 def download():
-    resolutions = ['240p', '360p', '480p', '720p', '1080p']
     if request.method == 'POST':
-        result = request.form
+        option_res = ["Low", "Medium480", "Medium720", "High"]
         video_url = request.form['yturl']
-        resolution_cnt = request.form['resolution']
-        resolution = resolutions[int(resolution_cnt)]
-        def video_download(url):
-            yt = YouTube(url)
-            yd = yt.streams.filter(res=resolution)
-            yd.download()
-
-        video_download(video_url)
-        return render_template('result.html', result=result)
+        selected_val = int(request.form['resolution'])
+        selected_res = option_res[selected_val]
+        downloaded_res, title, available_res = video_download(video_url, selected_res)
+        return render_template('result.html', url = video_url, resolution = downloaded_res, title = title, available_res = available_res)
 
 
 
