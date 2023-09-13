@@ -3,4 +3,5 @@ gunicorn
 sqlalchemy
 pymysql
 git+https://github.com/oncename/pytube
-#yt-dlp
+yt-dlp
+
